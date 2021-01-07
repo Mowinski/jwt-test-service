@@ -1,13 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
-
+var cors = require('cors')
 const app = express()
 const port = 3000
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-
+app.use(cors())
 
 const USERS_LIST = [
     {id: 1, username: 'kamil', password: 'moje', role: 'admin'},
